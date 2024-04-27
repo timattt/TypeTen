@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: type-10
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: type-10
+  template:
+    metadata:
+      labels:
+        app: type-10
+    spec:
+      containers:
+        - name: type-10
+          image: docker.io/timattt/type-10:latest
+          imagePullPolicy: Always
+          env:
+            - name: TYPE10_RABBIT_HOST
+              value: "localhost"
+            - name: TYPE10_RABBIT_PORT
+              value: "15672"
+            - name: TYPE10_RABBIT_USERNAME
+              value: "rabbit"
+            - name: TYPE10_RABBIT_PASSWORD
+              value: "rabbit"
+            - name: TYPE10_MAIL_USERNAME
+              value: "user"
+            - name: TYPE10_MAIL_PASSWORD
+              value: "pass"
