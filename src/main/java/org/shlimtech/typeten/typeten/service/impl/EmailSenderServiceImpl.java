@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class EmailSenderServiceImpl implements EmailSenderService {
 
-    private final JavaMailSender javaMailSender;
+    //private final JavaMailSender javaMailSender;
 
     @Value("${type10.fromAddress}")
     private String fromEmailAddress;
@@ -29,6 +29,6 @@ public class EmailSenderServiceImpl implements EmailSenderService {
         message.setText("Your registration code is " + code);
         message.setFrom(fromEmailAddress);
 
-        javaMailSender.send(message);
+        //javaMailSender.send(message);
     }
 }

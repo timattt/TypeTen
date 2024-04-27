@@ -18,7 +18,7 @@ spec:
           imagePullPolicy: Always
           env:
             - name: TYPE10_RABBIT_HOST
-              value: "localhost"
+              value: http://rabbitmq.default.svc.cluster.local
             - name: TYPE10_RABBIT_PORT
               value: "15672"
             - name: TYPE10_RABBIT_USERNAME
