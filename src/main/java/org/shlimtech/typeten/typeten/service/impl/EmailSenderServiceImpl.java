@@ -16,18 +16,22 @@ public class EmailSenderServiceImpl implements EmailSenderService {
     private final JavaMailSender javaMailSender;
 
     @Value("${spring.mail.username}")
-    private String fromEmailAddress;
+    private String username;
+
+    @Value("${spring.mail.password}")
+    private String password;
 
     @Override
     public void sendRegistrationEmail(String email, String code) {
         log.info("Sending registration email to " + email);
+        log.info("Creds: user=" + username + ", password=" + password);
 
         SimpleMailMessage message = new SimpleMailMessage();
 
         message.setTo(email);
         message.setSubject("Shlim-tech registration Email");
         message.setText("Your registration code is [" + code + "]\n\nOr you can use direct link: https://service-shlim-tech.ru/sso/code?email=" + email + "&code=" + code);
-        message.setFrom(fromEmailAddress + "@yandex.ru");
+        message.setFrom(username + "@yandex.ru");
 
         javaMailSender.send(message);
 
