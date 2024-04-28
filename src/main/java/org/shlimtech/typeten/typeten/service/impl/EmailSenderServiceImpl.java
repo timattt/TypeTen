@@ -13,9 +13,9 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class EmailSenderServiceImpl implements EmailSenderService {
 
-    //private final JavaMailSender javaMailSender;
+    private final JavaMailSender javaMailSender;
 
-    @Value("${type10.fromAddress}")
+    @Value("${spring.mail.username}")
     private String fromEmailAddress;
 
     @Override
@@ -26,9 +26,11 @@ public class EmailSenderServiceImpl implements EmailSenderService {
 
         message.setTo(email);
         message.setSubject("Shlim-tech registration Email");
-        message.setText("Your registration code is " + code);
-        message.setFrom(fromEmailAddress);
+        message.setText("Your registration code is [" + code + "]\n\nOr you can use direct link: https://service-shlim-tech.ru/sso/code?email=" + email + "&code=" + code);
+        message.setFrom(fromEmailAddress + "@yandex.ru");
 
-        //javaMailSender.send(message);
+        javaMailSender.send(message);
+
+        log.info("Messages to " + email + " sent!");
     }
 }
