@@ -26,6 +26,12 @@ spec:
             - name: TYPE10_RABBIT_PASSWORD
               value: "rabbit"
             - name: TYPE10_MAIL_USERNAME
-              value: "user"
+              valueFrom:
+                secretKeyRef:
+                  name: type-10-mail-creds
+                  key: username
             - name: TYPE10_MAIL_PASSWORD
-              value: "pass"
+              valueFrom:
+                secretKeyRef:
+                  name: type-10-mail-creds
+                  key: password
