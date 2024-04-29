@@ -28,7 +28,7 @@ public class EmailSenderServiceImpl implements EmailSenderService {
 
         SimpleMailMessage message = new SimpleMailMessage();
 
-        message.setSubject("Registration on shlim-tech.ru");
+        message.setSubject("Registration code");
         message.setTo(email);
         message.setText(code);
         message.setFrom(username);
