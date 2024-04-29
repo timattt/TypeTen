@@ -28,10 +28,10 @@ public class EmailSenderServiceImpl implements EmailSenderService {
 
         SimpleMailMessage message = new SimpleMailMessage();
 
+        message.setSubject("Registration on shlim-tech.ru");
         message.setTo(email);
-        message.setSubject("Shlim-tech registration Email");
-        message.setText("Your registration code is [" + code + "]\n\nOr you can use direct link: https://service-shlim-tech.ru/sso/code?email=" + email + "&code=" + code);
-        message.setFrom(username + "@yandex.ru");
+        message.setText(code);
+        message.setFrom(username);
 
         javaMailSender.send(message);
 
