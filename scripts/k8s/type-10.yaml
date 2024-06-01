@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: type-10
-          image: docker.io/timattt/type-10:latest
+          image: quay.io/timattt/type-10:latest
           imagePullPolicy: Always
           env:
             - name: TYPE10_RABBIT_HOST
