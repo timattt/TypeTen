@@ -1,4 +1,4 @@
-package org.shlimtech.typeten.typeten.service.core;
+package io.mipt.typeten.typeten.service.core;
 
 public interface EmailSenderService {
     void sendRegistrationEmail(String email, String code);

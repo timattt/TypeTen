@@ -1,9 +1,9 @@
-package org.shlimtech.typeten.typeten.rabbit;
+package io.mipt.typeten.typeten.rabbit;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.*;
 import lombok.extern.java.Log;
-import org.shlimtech.typeten.typeten.service.core.EmailSenderService;
+import io.mipt.typeten.typeten.service.core.EmailSenderService;
 import org.springframework.stereotype.Component;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 

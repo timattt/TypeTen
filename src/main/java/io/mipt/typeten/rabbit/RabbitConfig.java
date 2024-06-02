@@ -1,4 +1,4 @@
-package org.shlimtech.typeten.typeten.rabbit;
+package io.mipt.typeten.typeten.rabbit;
 
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.annotation.EnableRabbit;

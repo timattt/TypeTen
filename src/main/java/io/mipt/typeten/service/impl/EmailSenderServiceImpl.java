@@ -1,8 +1,8 @@
-package org.shlimtech.typeten.typeten.service.impl;
+package io.mipt.typeten.typeten.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
-import org.shlimtech.typeten.typeten.service.core.EmailSenderService;
+import io.mipt.typeten.typeten.service.core.EmailSenderService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
